@@ -30,7 +30,7 @@ class TwitterApi
   end
 end
 
-twitter = TwitterApi.new
-binding.pry
+# twitter = TwitterApi.new
+# binding.pry
 
 # find_user_for("annaershova").first.name
