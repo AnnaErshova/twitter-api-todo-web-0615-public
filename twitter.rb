@@ -1,5 +1,6 @@
 require 'twitter'
 require 'yaml'
+require 'pry'
 
 class TwitterApi
   attr_reader :client
@@ -20,11 +21,16 @@ class TwitterApi
   end
 
   def find_user_for(username)
-    client.user(username)
+    client.user(username) # this returns user_ID
   end
 
-  # limit to 10 most recent followers
+  # limit to 10 most recent followers => will return user_IDs
   def find_followers_for(user)
     client.followers(user).take(10)
   end
 end
+
+twitter = TwitterApi.new
+binding.pry
+
+# find_user_for("annaershova").first.name
