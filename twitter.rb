@@ -3,7 +3,7 @@ require 'yaml'
 require 'pry'
 
 class TwitterApi
-  attr_reader :client
+  attr_accessor :client
 
   def initialize
     keys = YAML.load_file('application.yml')
@@ -17,7 +17,7 @@ class TwitterApi
   end
 
   def most_recent_follower
-    @client.friends.first
+    client.friends.first
   end
 
   def find_user_for(username)
